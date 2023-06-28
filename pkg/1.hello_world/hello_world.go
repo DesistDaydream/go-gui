@@ -35,9 +35,14 @@ func main() {
 		buttonWidget,
 	)
 
+	c2 := container.NewHBox(
+		layout,
+		buttonWidget,
+	)
+
 	// 为 Canvas 填充内容，这里的参数其实就是一个 Container，而 Container 包含各种 CanvasObjcet。
 	// 当我们省略 c := w.Canvas() 代码时，这里可以使用 w.SetContent(layout)，该方法内部会也会调用 w.canvas.SetContent(content) 以创建一个 Canvas
-	c.SetContent(layout)
+	c.SetContent(c2)
 
 	// 显示窗口并运行程序。必须要在 main() 函数的末尾，因为该方法将会阻塞。
 	w.ShowAndRun()
